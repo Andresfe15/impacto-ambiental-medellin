@@ -1,0 +1,324 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-image: url(./imagenes/Fondo_Principal-transformed.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+
+a.nav-link{
+    color: #fff;
+}
+
+a.nav-link:hover{
+    color: rgb(14, 235, 10);
+}
+
+a.nav-link.active{
+    color: #fff
+}
+
+.banner {
+    margin-top: 20px;
+}
+
+.card-img-top {
+    height: 50%; 
+    object-fit: cover; 
+    width: 80%;
+}
+
+.cards {
+    display: flex;
+    background-color: #d4b6b6;
+}
+
+
+.card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.card::before, .testimonial::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #0d8402, #c9ff71); 
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+    z-index: -1; 
+}
+.servicio::before, .testimonial::before{
+    background: linear-gradient(to right, #0d8402, #c9ff71); 
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+.list-group-item::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #0d8402, #c9ff71); 
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+    z-index: -1;  
+}
+.servicio, .testimonial{
+    background: linear-gradient(to right, #0d8402, #c9ff71); 
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+.card:hover::before {
+    opacity: 0.6;
+}
+
+.card-content, .servicio, .testimonial {
+    position: relative;
+    padding: 30px;
+    color: #fff;
+    z-index: 1;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.card-description {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.card-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 25px;
+    margin-top: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card-button:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+}
+
+.col{
+    margin-bottom: 60px;
+}
+
+img{
+    width: 50px;
+    height: 90%;
+}
+.container1 img{
+    width: 10%;
+    margin: 20px;
+    margin-left: 110px;
+}
+
+.container1 h2{
+    margin: 10px 80px;
+    
+}
+
+.container1 h2{
+    margin-top: 30px;
+    margin-left: 80px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.enlaces img{
+    width: 15%;
+    margin-left: 85px;
+    
+}
+@media (max-width: 768px) {
+    
+
+    .container1 h2{
+        margin-left: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: calc(80% - 10px); 
+    }
+
+    .col {
+        display: flex;
+        justify-content: center;
+    }
+    
+}
+
+.container1 img {
+    width: 10%; 
+    margin: 20px;
+    margin-left: 10%; 
+    text-align: center;
+}
+
+    /* Diseño de paginas Aliadas */
+    .section-paginas {
+        text-align: center;
+        padding: 20px;
+      }
+      
+      .section-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      
+      .image-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .image-links a {
+        margin: 0 10px;
+        text-decoration: none;
+      }
+      
+      .image-links img {
+        width: 200px; /* Tamaño de las imágenes, ajusta según necesites */
+        height: auto;
+        border-radius: 10px; /* Bordes redondeados para las imágenes */
+        transition: transform 0.3s ease; /* Efecto de transición al pasar el mouse */
+      }
+      
+      .image-links img:hover {
+        transform: scale(1.1); /* Efecto de escala al pasar el mouse */
+      }
+      /* Diseño de paginas Aliadas - Fin*/
+
+@media screen and (max-width: 768px) {
+    .image-links {
+        flex-direction: column;
+      }
+    
+      .image-links a {
+        margin: 10px 0;
+      }
+    
+      .image-links img {
+        width: 100%; /* Cambiado de 200px a 100% */
+        height: auto;
+      }
+
+    .container1 img {
+        width: 50%; 
+        margin: 20px auto; 
+        margin-left: 100px; 
+    }
+
+    .container1 h2{
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (min-width: 768px) {
+   
+
+    .carousel-item img {
+      max-height: 500px; 
+      width: auto; 
+    }
+
+
+    .carousel-item img {
+        filter: brightness(1.1) contrast(1.1); 
+
+      }
+    .containerTestimonial {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+   .container-servicios{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+   }
+    
+    }
+     
+    h2 {
+        text-align: center;
+        
+        align-items: center;
+    }
+    
+    h2 img {
+        margin-right: 10px; 
+        width: 50px; 
+    }
+    
+    .testimonials {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 80%;
+        margin: auto;
+    }
+    
+    
+    .testimonial {
+        width: calc(50% - 5px); 
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: #fff; 
+        border-radius: 20px;
+        box-sizing: border-box; 
+        border-radius: #0d8402;
+    }
+    
+    .testimonial img {
+        width: 90px; 
+        height: 90px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    .testimonial p {
+        text-align: center;
+        color: white; 
+    }

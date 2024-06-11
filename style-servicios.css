@@ -1,0 +1,82 @@
+#container-servicios{
+    padding: 50px 20px;
+  }
+  
+  /* Diseño para el efecto de maquina de escribir */
+  #span-titulos{
+    display: block;
+    font-family: monospace;
+    white-space: nowrap;
+    border-right: 3px solid #008f39;
+    width: 118ch;
+    color: #007730;
+    text-decoration: double;
+    text-shadow: 0px 1px 10px rgb(39, 177, 39);
+    
+    animation: typing 1.5s steps(100),
+    blink 10s infinite step-end alternate;
+    overflow: hidden;
+  }
+  @keyframes typing{
+    from {width: 0;}
+  }
+  @keyframes blink{
+    50% {border-color: transparent;}
+  }
+  
+  #container-servicios h2 {
+    text-align: center;
+  }
+  #imgService, #imgTestimonials{
+    box-shadow: 0px 1px 10px rgb(39, 177, 39);
+  }
+  .servicio, .testimonial {
+    box-shadow: 0px 1px 10px rgb(39, 177, 39);
+    margin: 20px;
+    border: #0d8402;
+    padding: 16px;
+    border-radius: 5px;
+    display: inline-block; 
+    margin-right: 20px; 
+    vertical-align: top; 
+    transition: all 500ms ease;
+  }
+  .testimonial{
+    box-shadow: 0px 1px 10px rgb(39, 177, 39);
+    padding: 16px;
+    transition: all 500ms ease;
+  }
+    /* Cambio de color en los servicios */
+  .servicio:hover, .list-group-item:hover, .card:hover, .testimonial:hover{
+    transform: scale(1.05); 
+    transition: transform 0.3s ease; 
+    background: #0d8402; 
+    color: #fff;
+}
+
+  
+  .servicio:last-child {
+    margin-right: 0; 
+  }
+  
+  .servicio h3 {
+    margin-top: 0;
+  }
+
+  /* Ajuste de los Titulos dentro de los divs */
+  #titleService, #titleServices{
+    text-shadow: 0px 1px 10px rgb(39, 177, 39);
+    text-align: center;
+    margin-top: 10px;
+  }
+  .servicio {
+    width: 300px; 
+    max-width: 100%; 
+    overflow: hidden; 
+  }
+  
+  .servicio img {
+    width: 100%; 
+    height: 160px; 
+  }
+

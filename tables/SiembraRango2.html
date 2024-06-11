@@ -1,0 +1,1546 @@
+
+            <html>
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Bosque urbano</title>
+                <style>
+                  table{
+                    margin-top: 30px;
+                    width: 100%;
+                    border-collapse: collapse;
+                    border-radius: 5px;
+                    overflow: hidden;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9); 
+                    background-color: #fff; 
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                  }
+
+                  table th, table td{
+                    padding: 2px;
+                    text-align: center;
+                  }
+
+                  table th{
+                    background-color: #2ecc71; 
+                    color: #fff; 
+                    transition: background-color 0.3s ease;
+                  }
+
+                  table tr:nth-child(even) {
+                    background-color: #ecf0f1; 
+                  }
+
+                  table:hover {
+                    transform: translateY(-3px); 
+                    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); 
+                  }
+                  
+                </style>
+            </head>
+            <body>
+        <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Corregimiento</th>
+      <th>Nombre</th>
+      <th>id</th>
+      <th>Hectareas sembradas</th>
+      <th>Especie sembreada</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>subregion de bajo cauca</td>
+      <td>Andrey Garcia</td>
+      <td>246692</td>
+      <td>30</td>
+      <td>Guayac�n (Tabebuia spp.)</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>subregio del valle de aburra</td>
+      <td>Andres Sanchez</td>
+      <td>970222</td>
+      <td>43</td>
+      <td>Chical� (Erythrina fusca)</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>subregion del norte</td>
+      <td>Andres Sanchez</td>
+      <td>104041</td>
+      <td>33</td>
+      <td>Ceroxylon (Ceroxylon spp., palma de cera)</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>subregion del uraba</td>
+      <td>Juan Pablo</td>
+      <td>220309</td>
+      <td>30</td>
+      <td>Aliso (Alnus acuminata)</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>subregion del medio magdalena</td>
+      <td>Valentina Mejia</td>
+      <td>774700</td>
+      <td>13</td>
+      <td>Ceroxylon (Ceroxylon spp., palma de cera)</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>subregion de suroeste</td>
+      <td>Miguel Paz</td>
+      <td>707983</td>
+      <td>17</td>
+      <td>Ceiba (Ceiba pentandra)</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>subregion del medio magdalena</td>
+      <td>Miguel Paz</td>
+      <td>338559</td>
+      <td>30</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>subregion del occidente</td>
+      <td>Juan Pablo</td>
+      <td>606833</td>
+      <td>35</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>subregion del occidente</td>
+      <td>Andres Sanchez</td>
+      <td>977133</td>
+      <td>21</td>
+      <td>Ceroxylon (Ceroxylon spp., palma de cera)</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>subregion de suroeste</td>
+      <td>Andrey Garcia</td>
+      <td>224237</td>
+      <td>21</td>
+      <td>Aliso (Alnus acuminata)</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>subregion del norte</td>
+      <td>Andrey Garcia</td>
+      <td>956009</td>
+      <td>49</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>subregion de suroeste</td>
+      <td>Valentina Mejia</td>
+      <td>561822</td>
+      <td>37</td>
+      <td>Ceroxylon (Ceroxylon spp., palma de cera)</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>subregion del nordeste</td>
+      <td>Andres Sanchez</td>
+      <td>700647</td>
+      <td>24</td>
+      <td>Ceiba (Ceiba pentandra)</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>subregion de bajo cauca</td>
+      <td>Valentina Mejia</td>
+      <td>769678</td>
+      <td>41</td>
+      <td>Aliso (Alnus acuminata)</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>subregion del nordeste</td>
+      <td>Valentina Mejia</td>
+      <td>643830</td>
+      <td>24</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>subregio del valle de aburra</td>
+      <td>Juan Pablo</td>
+      <td>232727</td>
+      <td>25</td>
+      <td>Ceiba (Ceiba pentandra)</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>subregion del nordeste</td>
+      <td>Andres Sanchez</td>
+      <td>698426</td>
+      <td>43</td>
+      <td>Ceroxylon (Ceroxylon spp., palma de cera)</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>subregion del norte</td>
+      <td>Andrey Garcia</td>
+      <td>770348</td>
+      <td>27</td>
+      <td>Chical� (Erythrina fusca)</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>subregion del norte</td>
+      <td>Miguel Paz</td>
+      <td>951955</td>
+      <td>16</td>
+      <td>Chical� (Erythrina fusca)</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>subregion del norte</td>
+      <td>Juan Pablo</td>
+      <td>49527</td>
+      <td>12</td>
+      <td>Ceiba (Ceiba pentandra)</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>subregion de oriente</td>
+      <td>Valentina Mejia</td>
+      <td>73725</td>
+      <td>21</td>
+      <td>Guayac�n (Tabebuia spp.)</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>subregio del valle de aburra</td>
+      <td>Miguel Paz</td>
+      <td>359995</td>
+      <td>48</td>
+      <td>Ceroxylon (Ceroxylon spp., palma de cera)</td>
+    </tr>
+    <tr>
+      <th>69</th>
+      <td>subregio del valle de aburra</td>
+      <td>Miguel Paz</td>
+      <td>26047</td>
+      <td>49</td>
+      <td>Chical� (Erythrina fusca)</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>subregion del uraba</td>
+      <td>Juan Pablo</td>
+      <td>473887</td>
+      <td>22</td>
+      <td>Ceiba (Ceiba pentandra)</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>subregion del nordeste</td>
+      <td>Andrey Garcia</td>
+      <td>831710</td>
+      <td>24</td>
+      <td>Chical� (Erythrina fusca)</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>subregion de suroeste</td>
+      <td>Miguel Paz</td>
+      <td>441101</td>
+      <td>27</td>
+      <td>Nogal cafetero (Cordia alliodora)</td>
+    </tr>
+    <tr>
+      <th>87</th>
+      <td>subregion del uraba</td>
+      <td>Miguel Paz</td>
+      <td>348341</td>
+      <td>17</td>
+      <td>Ceiba (Ceiba pentandra)</td>
+    </tr>
+    <tr>
+      <th>88</th>
+      <td>subregion de bajo cauca</td>
+      <td>Valentina Mejia</td>
+      <td>486741</td>
+      <td>43</td>
+      <td>Ceiba (Ceiba pentandra)</td>
+    </tr>
+    <tr>
+      <th>90</th>
+      <td>subregion del medio magdalena</td>
+      <td>Andres Sanchez</td>
+      <td>254485</td>
+      <td>32</td>
+      <td>Ceiba (Ceiba pentandra)</td>
+    </tr>
+    <tr>
+      <th>91</th>
+      <td>subregion del medio magdalena</td>
+      <td>Miguel Paz</td>
+      <td>431658</td>
+      <td>41</td>
+      <td>Aliso (Alnus acuminata)</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>subregion de oriente</td>
+      <td>Valentina Mejia</td>
+      <td>232811</td>
+      <td>14</td>
+      <td>Nogal cafetero (Cordia alliodora)</td>
+    </tr>
+    <tr>
+      <th>95</th>
+      <td>subregion del uraba</td>
+      <td>Valentina Mejia</td>
+      <td>734668</td>
+      <td>17</td>
+      <td>Nogal cafetero (Cordia alliodora)</td>
+    </tr>
+    <tr>
+      <th>104</th>
+      <td>subregion de oriente</td>
+      <td>Miguel Paz</td>
+      <td>906993</td>
+      <td>33</td>
+      <td>Ceroxylon (Ceroxylon spp., palma de cera)</td>
+    </tr>
+    <tr>
+      <th>105</th>
+      <td>subregion del norte</td>
+      <td>Andres Sanchez</td>
+      <td>122324</td>
+      <td>24</td>
+      <td>Nogal cafetero (Cordia alliodora)</td>
+    </tr>
+    <tr>
+      <th>107</th>
+      <td>subregion del nordeste</td>
+      <td>Juan Pablo</td>
+      <td>165910</td>
+      <td>31</td>
+      <td>Ceiba (Ceiba pentandra)</td>
+    </tr>
+    <tr>
+      <th>108</th>
+      <td>subregion del norte</td>
+      <td>Miguel Paz</td>
+      <td>997925</td>
+      <td>38</td>
+      <td>Nogal cafetero (Cordia alliodora)</td>
+    </tr>
+    <tr>
+      <th>109</th>
+      <td>subregion del uraba</td>
+      <td>Valentina Mejia</td>
+      <td>439186</td>
+      <td>16</td>
+      <td>Ceiba (Ceiba pentandra)</td>
+    </tr>
+    <tr>
+      <th>113</th>
+      <td>subregion de oriente</td>
+      <td>Andres Sanchez</td>
+      <td>89286</td>
+      <td>36</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>118</th>
+      <td>subregion de bajo cauca</td>
+      <td>Juan Pablo</td>
+      <td>628753</td>
+      <td>15</td>
+      <td>Chical� (Erythrina fusca)</td>
+    </tr>
+    <tr>
+      <th>120</th>
+      <td>subregion del norte</td>
+      <td>Miguel Paz</td>
+      <td>965813</td>
+      <td>15</td>
+      <td>Ceiba (Ceiba pentandra)</td>
+    </tr>
+    <tr>
+      <th>121</th>
+      <td>subregion de oriente</td>
+      <td>Valentina Mejia</td>
+      <td>587508</td>
+      <td>31</td>
+      <td>Nogal cafetero (Cordia alliodora)</td>
+    </tr>
+    <tr>
+      <th>122</th>
+      <td>subregion del medio magdalena</td>
+      <td>Juan Pablo</td>
+      <td>770355</td>
+      <td>19</td>
+      <td>Nogal cafetero (Cordia alliodora)</td>
+    </tr>
+    <tr>
+      <th>123</th>
+      <td>subregion de suroeste</td>
+      <td>Andrey Garcia</td>
+      <td>790604</td>
+      <td>16</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>125</th>
+      <td>subregion de bajo cauca</td>
+      <td>Miguel Paz</td>
+      <td>414210</td>
+      <td>40</td>
+      <td>Ceroxylon (Ceroxylon spp., palma de cera)</td>
+    </tr>
+    <tr>
+      <th>126</th>
+      <td>subregion de oriente</td>
+      <td>Miguel Paz</td>
+      <td>220882</td>
+      <td>10</td>
+      <td>Aliso (Alnus acuminata)</td>
+    </tr>
+    <tr>
+      <th>127</th>
+      <td>subregion del norte</td>
+      <td>Miguel Paz</td>
+      <td>206341</td>
+      <td>44</td>
+      <td>Ceroxylon (Ceroxylon spp., palma de cera)</td>
+    </tr>
+    <tr>
+      <th>128</th>
+      <td>subregion de suroeste</td>
+      <td>Andrey Garcia</td>
+      <td>931823</td>
+      <td>32</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>130</th>
+      <td>subregion de suroeste</td>
+      <td>Juan Pablo</td>
+      <td>83137</td>
+      <td>28</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>141</th>
+      <td>subregion del occidente</td>
+      <td>Andres Sanchez</td>
+      <td>368137</td>
+      <td>11</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>142</th>
+      <td>subregion de oriente</td>
+      <td>Valentina Mejia</td>
+      <td>511153</td>
+      <td>28</td>
+      <td>Guayac�n (Tabebuia spp.)</td>
+    </tr>
+    <tr>
+      <th>143</th>
+      <td>subregion del uraba</td>
+      <td>Andrey Garcia</td>
+      <td>217287</td>
+      <td>18</td>
+      <td>Guayac�n (Tabebuia spp.)</td>
+    </tr>
+    <tr>
+      <th>151</th>
+      <td>subregion del medio magdalena</td>
+      <td>Andres Sanchez</td>
+      <td>585598</td>
+      <td>26</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>154</th>
+      <td>subregion del norte</td>
+      <td>Valentina Mejia</td>
+      <td>598950</td>
+      <td>26</td>
+      <td>Nogal cafetero (Cordia alliodora)</td>
+    </tr>
+    <tr>
+      <th>155</th>
+      <td>subregion del nordeste</td>
+      <td>Andres Sanchez</td>
+      <td>215535</td>
+      <td>25</td>
+      <td>Guadua (Guadua angustifolia, bamb�)</td>
+    </tr>
+    <tr>
+      <th>156</th>
+      <td>subregion de oriente</td>
+      <td>Miguel Paz</td>
+      <td>969355</td>
+      <td>46</td>
+      <td>Guadua (Guadua angustifolia, bamb�)</td>
+    </tr>
+    <tr>
+      <th>163</th>
+      <td>subregion del norte</td>
+      <td>Juan Pablo</td>
+      <td>541655</td>
+      <td>44</td>
+      <td>Ceroxylon (Ceroxylon spp., palma de cera)</td>
+    </tr>
+    <tr>
+      <th>165</th>
+      <td>subregion de bajo cauca</td>
+      <td>Juan Pablo</td>
+      <td>862900</td>
+      <td>22</td>
+      <td>Chical� (Erythrina fusca)</td>
+    </tr>
+    <tr>
+      <th>171</th>
+      <td>subregion de oriente</td>
+      <td>Juan Pablo</td>
+      <td>630261</td>
+      <td>11</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>175</th>
+      <td>subregio del valle de aburra</td>
+      <td>Juan Pablo</td>
+      <td>474893</td>
+      <td>20</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>176</th>
+      <td>subregion del medio magdalena</td>
+      <td>Juan Pablo</td>
+      <td>792319</td>
+      <td>11</td>
+      <td>Ceroxylon (Ceroxylon spp., palma de cera)</td>
+    </tr>
+    <tr>
+      <th>179</th>
+      <td>subregion del norte</td>
+      <td>Valentina Mejia</td>
+      <td>933615</td>
+      <td>13</td>
+      <td>Ceiba (Ceiba pentandra)</td>
+    </tr>
+    <tr>
+      <th>182</th>
+      <td>subregion del medio magdalena</td>
+      <td>Andres Sanchez</td>
+      <td>603921</td>
+      <td>21</td>
+      <td>Guayac�n (Tabebuia spp.)</td>
+    </tr>
+    <tr>
+      <th>185</th>
+      <td>subregion del medio magdalena</td>
+      <td>Miguel Paz</td>
+      <td>43889</td>
+      <td>29</td>
+      <td>Chical� (Erythrina fusca)</td>
+    </tr>
+    <tr>
+      <th>186</th>
+      <td>subregion del medio magdalena</td>
+      <td>Juan Pablo</td>
+      <td>791350</td>
+      <td>44</td>
+      <td>Guayac�n (Tabebuia spp.)</td>
+    </tr>
+    <tr>
+      <th>187</th>
+      <td>subregion de bajo cauca</td>
+      <td>Andrey Garcia</td>
+      <td>393173</td>
+      <td>20</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>191</th>
+      <td>subregion de bajo cauca</td>
+      <td>Juan Pablo</td>
+      <td>752491</td>
+      <td>32</td>
+      <td>Ceiba (Ceiba pentandra)</td>
+    </tr>
+    <tr>
+      <th>197</th>
+      <td>subregion del uraba</td>
+      <td>Valentina Mejia</td>
+      <td>188209</td>
+      <td>22</td>
+      <td>Ceroxylon (Ceroxylon spp., palma de cera)</td>
+    </tr>
+    <tr>
+      <th>203</th>
+      <td>subregion del occidente</td>
+      <td>Andres Sanchez</td>
+      <td>515344</td>
+      <td>13</td>
+      <td>Ceroxylon (Ceroxylon spp., palma de cera)</td>
+    </tr>
+    <tr>
+      <th>205</th>
+      <td>subregion de oriente</td>
+      <td>Miguel Paz</td>
+      <td>437531</td>
+      <td>15</td>
+      <td>Aliso (Alnus acuminata)</td>
+    </tr>
+    <tr>
+      <th>206</th>
+      <td>subregio del valle de aburra</td>
+      <td>Andrey Garcia</td>
+      <td>271145</td>
+      <td>48</td>
+      <td>Nogal cafetero (Cordia alliodora)</td>
+    </tr>
+    <tr>
+      <th>208</th>
+      <td>subregion del nordeste</td>
+      <td>Andrey Garcia</td>
+      <td>383136</td>
+      <td>41</td>
+      <td>Nogal cafetero (Cordia alliodora)</td>
+    </tr>
+    <tr>
+      <th>214</th>
+      <td>subregion del norte</td>
+      <td>Valentina Mejia</td>
+      <td>438489</td>
+      <td>29</td>
+      <td>Aliso (Alnus acuminata)</td>
+    </tr>
+    <tr>
+      <th>215</th>
+      <td>subregion del norte</td>
+      <td>Miguel Paz</td>
+      <td>89788</td>
+      <td>46</td>
+      <td>Ceiba (Ceiba pentandra)</td>
+    </tr>
+    <tr>
+      <th>218</th>
+      <td>subregion del medio magdalena</td>
+      <td>Miguel Paz</td>
+      <td>813111</td>
+      <td>40</td>
+      <td>Aliso (Alnus acuminata)</td>
+    </tr>
+    <tr>
+      <th>219</th>
+      <td>subregion de suroeste</td>
+      <td>Andrey Garcia</td>
+      <td>730355</td>
+      <td>48</td>
+      <td>Nogal cafetero (Cordia alliodora)</td>
+    </tr>
+    <tr>
+      <th>220</th>
+      <td>subregion del medio magdalena</td>
+      <td>Andrey Garcia</td>
+      <td>829755</td>
+      <td>22</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>226</th>
+      <td>subregion de oriente</td>
+      <td>Juan Pablo</td>
+      <td>47106</td>
+      <td>32</td>
+      <td>Nogal cafetero (Cordia alliodora)</td>
+    </tr>
+    <tr>
+      <th>227</th>
+      <td>subregion de suroeste</td>
+      <td>Miguel Paz</td>
+      <td>432406</td>
+      <td>26</td>
+      <td>Ceroxylon (Ceroxylon spp., palma de cera)</td>
+    </tr>
+    <tr>
+      <th>229</th>
+      <td>subregion de suroeste</td>
+      <td>Andrey Garcia</td>
+      <td>340136</td>
+      <td>20</td>
+      <td>Aliso (Alnus acuminata)</td>
+    </tr>
+    <tr>
+      <th>231</th>
+      <td>subregion del norte</td>
+      <td>Juan Pablo</td>
+      <td>101296</td>
+      <td>39</td>
+      <td>Aliso (Alnus acuminata)</td>
+    </tr>
+    <tr>
+      <th>234</th>
+      <td>subregion de oriente</td>
+      <td>Miguel Paz</td>
+      <td>908147</td>
+      <td>30</td>
+      <td>Guayac�n (Tabebuia spp.)</td>
+    </tr>
+    <tr>
+      <th>235</th>
+      <td>subregion del medio magdalena</td>
+      <td>Miguel Paz</td>
+      <td>340369</td>
+      <td>18</td>
+      <td>Chical� (Erythrina fusca)</td>
+    </tr>
+    <tr>
+      <th>239</th>
+      <td>subregion del nordeste</td>
+      <td>Valentina Mejia</td>
+      <td>825898</td>
+      <td>33</td>
+      <td>Aliso (Alnus acuminata)</td>
+    </tr>
+    <tr>
+      <th>244</th>
+      <td>subregion del occidente</td>
+      <td>Miguel Paz</td>
+      <td>602008</td>
+      <td>46</td>
+      <td>Ceroxylon (Ceroxylon spp., palma de cera)</td>
+    </tr>
+    <tr>
+      <th>247</th>
+      <td>subregion del occidente</td>
+      <td>Valentina Mejia</td>
+      <td>464110</td>
+      <td>13</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>248</th>
+      <td>subregion de oriente</td>
+      <td>Andres Sanchez</td>
+      <td>63730</td>
+      <td>12</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>249</th>
+      <td>subregion de bajo cauca</td>
+      <td>Miguel Paz</td>
+      <td>547454</td>
+      <td>36</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>255</th>
+      <td>subregio del valle de aburra</td>
+      <td>Andrey Garcia</td>
+      <td>487776</td>
+      <td>24</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>256</th>
+      <td>subregion del medio magdalena</td>
+      <td>Juan Pablo</td>
+      <td>763070</td>
+      <td>10</td>
+      <td>Guayac�n (Tabebuia spp.)</td>
+    </tr>
+    <tr>
+      <th>257</th>
+      <td>subregion del nordeste</td>
+      <td>Juan Pablo</td>
+      <td>842607</td>
+      <td>18</td>
+      <td>Aliso (Alnus acuminata)</td>
+    </tr>
+    <tr>
+      <th>259</th>
+      <td>subregion del norte</td>
+      <td>Miguel Paz</td>
+      <td>819197</td>
+      <td>19</td>
+      <td>Aliso (Alnus acuminata)</td>
+    </tr>
+    <tr>
+      <th>261</th>
+      <td>subregion del occidente</td>
+      <td>Miguel Paz</td>
+      <td>225409</td>
+      <td>38</td>
+      <td>Guayac�n (Tabebuia spp.)</td>
+    </tr>
+    <tr>
+      <th>264</th>
+      <td>subregion de suroeste</td>
+      <td>Andrey Garcia</td>
+      <td>17107</td>
+      <td>33</td>
+      <td>Nogal cafetero (Cordia alliodora)</td>
+    </tr>
+    <tr>
+      <th>268</th>
+      <td>subregion de bajo cauca</td>
+      <td>Valentina Mejia</td>
+      <td>961389</td>
+      <td>46</td>
+      <td>Guadua (Guadua angustifolia, bamb�)</td>
+    </tr>
+    <tr>
+      <th>269</th>
+      <td>subregion del uraba</td>
+      <td>Andrey Garcia</td>
+      <td>510934</td>
+      <td>33</td>
+      <td>Aliso (Alnus acuminata)</td>
+    </tr>
+    <tr>
+      <th>270</th>
+      <td>subregion del occidente</td>
+      <td>Juan Pablo</td>
+      <td>328254</td>
+      <td>34</td>
+      <td>Aliso (Alnus acuminata)</td>
+    </tr>
+    <tr>
+      <th>271</th>
+      <td>subregio del valle de aburra</td>
+      <td>Andrey Garcia</td>
+      <td>750350</td>
+      <td>37</td>
+      <td>Guadua (Guadua angustifolia, bamb�)</td>
+    </tr>
+    <tr>
+      <th>274</th>
+      <td>subregion del medio magdalena</td>
+      <td>Juan Pablo</td>
+      <td>793065</td>
+      <td>17</td>
+      <td>Ceiba (Ceiba pentandra)</td>
+    </tr>
+    <tr>
+      <th>275</th>
+      <td>subregion de bajo cauca</td>
+      <td>Miguel Paz</td>
+      <td>26493</td>
+      <td>38</td>
+      <td>Chical� (Erythrina fusca)</td>
+    </tr>
+    <tr>
+      <th>277</th>
+      <td>subregion de oriente</td>
+      <td>Andres Sanchez</td>
+      <td>137305</td>
+      <td>46</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>279</th>
+      <td>subregion del nordeste</td>
+      <td>Juan Pablo</td>
+      <td>570057</td>
+      <td>48</td>
+      <td>Guayac�n (Tabebuia spp.)</td>
+    </tr>
+    <tr>
+      <th>280</th>
+      <td>subregion de oriente</td>
+      <td>Miguel Paz</td>
+      <td>28727</td>
+      <td>30</td>
+      <td>Nogal cafetero (Cordia alliodora)</td>
+    </tr>
+    <tr>
+      <th>281</th>
+      <td>subregion del uraba</td>
+      <td>Andrey Garcia</td>
+      <td>482381</td>
+      <td>20</td>
+      <td>Aliso (Alnus acuminata)</td>
+    </tr>
+    <tr>
+      <th>282</th>
+      <td>subregion del uraba</td>
+      <td>Andres Sanchez</td>
+      <td>332948</td>
+      <td>19</td>
+      <td>Chical� (Erythrina fusca)</td>
+    </tr>
+    <tr>
+      <th>285</th>
+      <td>subregion del norte</td>
+      <td>Miguel Paz</td>
+      <td>34975</td>
+      <td>28</td>
+      <td>Ceiba (Ceiba pentandra)</td>
+    </tr>
+    <tr>
+      <th>288</th>
+      <td>subregion de bajo cauca</td>
+      <td>Juan Pablo</td>
+      <td>630193</td>
+      <td>16</td>
+      <td>Ceroxylon (Ceroxylon spp., palma de cera)</td>
+    </tr>
+    <tr>
+      <th>292</th>
+      <td>subregion del uraba</td>
+      <td>Valentina Mejia</td>
+      <td>179605</td>
+      <td>38</td>
+      <td>Ceroxylon (Ceroxylon spp., palma de cera)</td>
+    </tr>
+    <tr>
+      <th>293</th>
+      <td>subregion del occidente</td>
+      <td>Andres Sanchez</td>
+      <td>542873</td>
+      <td>11</td>
+      <td>Chical� (Erythrina fusca)</td>
+    </tr>
+    <tr>
+      <th>295</th>
+      <td>subregion del nordeste</td>
+      <td>Valentina Mejia</td>
+      <td>231519</td>
+      <td>16</td>
+      <td>Guayac�n (Tabebuia spp.)</td>
+    </tr>
+    <tr>
+      <th>300</th>
+      <td>subregion de bajo cauca</td>
+      <td>Valentina Mejia</td>
+      <td>881872</td>
+      <td>35</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>303</th>
+      <td>subregion de suroeste</td>
+      <td>Andres Sanchez</td>
+      <td>294727</td>
+      <td>35</td>
+      <td>Ceiba (Ceiba pentandra)</td>
+    </tr>
+    <tr>
+      <th>304</th>
+      <td>subregion de oriente</td>
+      <td>Andrey Garcia</td>
+      <td>729770</td>
+      <td>32</td>
+      <td>Nogal cafetero (Cordia alliodora)</td>
+    </tr>
+    <tr>
+      <th>306</th>
+      <td>subregion del nordeste</td>
+      <td>Andres Sanchez</td>
+      <td>814083</td>
+      <td>14</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>311</th>
+      <td>subregion de suroeste</td>
+      <td>Andrey Garcia</td>
+      <td>716954</td>
+      <td>21</td>
+      <td>Aliso (Alnus acuminata)</td>
+    </tr>
+    <tr>
+      <th>313</th>
+      <td>subregion del occidente</td>
+      <td>Juan Pablo</td>
+      <td>761008</td>
+      <td>21</td>
+      <td>Chical� (Erythrina fusca)</td>
+    </tr>
+    <tr>
+      <th>314</th>
+      <td>subregio del valle de aburra</td>
+      <td>Andrey Garcia</td>
+      <td>318071</td>
+      <td>38</td>
+      <td>Chical� (Erythrina fusca)</td>
+    </tr>
+    <tr>
+      <th>315</th>
+      <td>subregion del medio magdalena</td>
+      <td>Andrey Garcia</td>
+      <td>336539</td>
+      <td>23</td>
+      <td>Nogal cafetero (Cordia alliodora)</td>
+    </tr>
+    <tr>
+      <th>324</th>
+      <td>subregion del occidente</td>
+      <td>Andres Sanchez</td>
+      <td>180754</td>
+      <td>26</td>
+      <td>Nogal cafetero (Cordia alliodora)</td>
+    </tr>
+    <tr>
+      <th>325</th>
+      <td>subregion del occidente</td>
+      <td>Valentina Mejia</td>
+      <td>294954</td>
+      <td>49</td>
+      <td>Chical� (Erythrina fusca)</td>
+    </tr>
+    <tr>
+      <th>326</th>
+      <td>subregio del valle de aburra</td>
+      <td>Miguel Paz</td>
+      <td>473031</td>
+      <td>10</td>
+      <td>Guayac�n (Tabebuia spp.)</td>
+    </tr>
+    <tr>
+      <th>327</th>
+      <td>subregion del medio magdalena</td>
+      <td>Miguel Paz</td>
+      <td>543128</td>
+      <td>21</td>
+      <td>Guayac�n (Tabebuia spp.)</td>
+    </tr>
+    <tr>
+      <th>328</th>
+      <td>subregion de oriente</td>
+      <td>Andres Sanchez</td>
+      <td>543781</td>
+      <td>35</td>
+      <td>Ceiba (Ceiba pentandra)</td>
+    </tr>
+    <tr>
+      <th>334</th>
+      <td>subregio del valle de aburra</td>
+      <td>Andres Sanchez</td>
+      <td>652546</td>
+      <td>45</td>
+      <td>Chical� (Erythrina fusca)</td>
+    </tr>
+    <tr>
+      <th>337</th>
+      <td>subregion del nordeste</td>
+      <td>Valentina Mejia</td>
+      <td>69574</td>
+      <td>41</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>339</th>
+      <td>subregion de suroeste</td>
+      <td>Andres Sanchez</td>
+      <td>450401</td>
+      <td>22</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>340</th>
+      <td>subregion del occidente</td>
+      <td>Valentina Mejia</td>
+      <td>457657</td>
+      <td>28</td>
+      <td>Nogal cafetero (Cordia alliodora)</td>
+    </tr>
+    <tr>
+      <th>342</th>
+      <td>subregion de suroeste</td>
+      <td>Miguel Paz</td>
+      <td>493790</td>
+      <td>23</td>
+      <td>Guadua (Guadua angustifolia, bamb�)</td>
+    </tr>
+    <tr>
+      <th>344</th>
+      <td>subregion de oriente</td>
+      <td>Andres Sanchez</td>
+      <td>481794</td>
+      <td>48</td>
+      <td>Ceiba (Ceiba pentandra)</td>
+    </tr>
+    <tr>
+      <th>346</th>
+      <td>subregion de oriente</td>
+      <td>Juan Pablo</td>
+      <td>615319</td>
+      <td>17</td>
+      <td>Aliso (Alnus acuminata)</td>
+    </tr>
+    <tr>
+      <th>347</th>
+      <td>subregion de oriente</td>
+      <td>Andrey Garcia</td>
+      <td>22630</td>
+      <td>18</td>
+      <td>Aliso (Alnus acuminata)</td>
+    </tr>
+    <tr>
+      <th>348</th>
+      <td>subregion del norte</td>
+      <td>Valentina Mejia</td>
+      <td>99080</td>
+      <td>39</td>
+      <td>Nogal cafetero (Cordia alliodora)</td>
+    </tr>
+    <tr>
+      <th>351</th>
+      <td>subregio del valle de aburra</td>
+      <td>Miguel Paz</td>
+      <td>720072</td>
+      <td>14</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>356</th>
+      <td>subregion del medio magdalena</td>
+      <td>Valentina Mejia</td>
+      <td>486119</td>
+      <td>17</td>
+      <td>Ceroxylon (Ceroxylon spp., palma de cera)</td>
+    </tr>
+    <tr>
+      <th>357</th>
+      <td>subregion del occidente</td>
+      <td>Andres Sanchez</td>
+      <td>924564</td>
+      <td>23</td>
+      <td>Guadua (Guadua angustifolia, bamb�)</td>
+    </tr>
+    <tr>
+      <th>359</th>
+      <td>subregion del medio magdalena</td>
+      <td>Juan Pablo</td>
+      <td>512840</td>
+      <td>29</td>
+      <td>Chical� (Erythrina fusca)</td>
+    </tr>
+    <tr>
+      <th>361</th>
+      <td>subregio del valle de aburra</td>
+      <td>Andrey Garcia</td>
+      <td>224237</td>
+      <td>15</td>
+      <td>Ceiba (Ceiba pentandra)</td>
+    </tr>
+    <tr>
+      <th>364</th>
+      <td>subregion del occidente</td>
+      <td>Juan Pablo</td>
+      <td>733385</td>
+      <td>26</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>368</th>
+      <td>subregion del uraba</td>
+      <td>Andrey Garcia</td>
+      <td>39198</td>
+      <td>25</td>
+      <td>Chical� (Erythrina fusca)</td>
+    </tr>
+    <tr>
+      <th>370</th>
+      <td>subregion de suroeste</td>
+      <td>Valentina Mejia</td>
+      <td>675924</td>
+      <td>26</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>376</th>
+      <td>subregion del occidente</td>
+      <td>Juan Pablo</td>
+      <td>649628</td>
+      <td>48</td>
+      <td>Ceroxylon (Ceroxylon spp., palma de cera)</td>
+    </tr>
+    <tr>
+      <th>389</th>
+      <td>subregion de bajo cauca</td>
+      <td>Juan Pablo</td>
+      <td>485473</td>
+      <td>21</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>395</th>
+      <td>subregion de suroeste</td>
+      <td>Andrey Garcia</td>
+      <td>901235</td>
+      <td>13</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>396</th>
+      <td>subregion del medio magdalena</td>
+      <td>Valentina Mejia</td>
+      <td>152042</td>
+      <td>32</td>
+      <td>Nogal cafetero (Cordia alliodora)</td>
+    </tr>
+    <tr>
+      <th>403</th>
+      <td>subregio del valle de aburra</td>
+      <td>Valentina Mejia</td>
+      <td>683736</td>
+      <td>40</td>
+      <td>Nogal cafetero (Cordia alliodora)</td>
+    </tr>
+    <tr>
+      <th>407</th>
+      <td>subregion del norte</td>
+      <td>Andres Sanchez</td>
+      <td>836077</td>
+      <td>10</td>
+      <td>Aliso (Alnus acuminata)</td>
+    </tr>
+    <tr>
+      <th>409</th>
+      <td>subregion del norte</td>
+      <td>Miguel Paz</td>
+      <td>652856</td>
+      <td>26</td>
+      <td>Guadua (Guadua angustifolia, bamb�)</td>
+    </tr>
+    <tr>
+      <th>410</th>
+      <td>subregion de suroeste</td>
+      <td>Andres Sanchez</td>
+      <td>271946</td>
+      <td>11</td>
+      <td>Aliso (Alnus acuminata)</td>
+    </tr>
+    <tr>
+      <th>412</th>
+      <td>subregion de bajo cauca</td>
+      <td>Valentina Mejia</td>
+      <td>57529</td>
+      <td>23</td>
+      <td>Chical� (Erythrina fusca)</td>
+    </tr>
+    <tr>
+      <th>414</th>
+      <td>subregion del uraba</td>
+      <td>Andres Sanchez</td>
+      <td>767561</td>
+      <td>27</td>
+      <td>Guayac�n (Tabebuia spp.)</td>
+    </tr>
+    <tr>
+      <th>416</th>
+      <td>subregion del uraba</td>
+      <td>Andres Sanchez</td>
+      <td>590801</td>
+      <td>37</td>
+      <td>Aliso (Alnus acuminata)</td>
+    </tr>
+    <tr>
+      <th>423</th>
+      <td>subregion de bajo cauca</td>
+      <td>Miguel Paz</td>
+      <td>125558</td>
+      <td>31</td>
+      <td>Ceiba (Ceiba pentandra)</td>
+    </tr>
+    <tr>
+      <th>425</th>
+      <td>subregion del uraba</td>
+      <td>Andres Sanchez</td>
+      <td>364340</td>
+      <td>15</td>
+      <td>Ceiba (Ceiba pentandra)</td>
+    </tr>
+    <tr>
+      <th>426</th>
+      <td>subregion del occidente</td>
+      <td>Andres Sanchez</td>
+      <td>421468</td>
+      <td>22</td>
+      <td>Ceiba (Ceiba pentandra)</td>
+    </tr>
+    <tr>
+      <th>428</th>
+      <td>subregion de bajo cauca</td>
+      <td>Miguel Paz</td>
+      <td>639639</td>
+      <td>15</td>
+      <td>Ceroxylon (Ceroxylon spp., palma de cera)</td>
+    </tr>
+    <tr>
+      <th>432</th>
+      <td>subregion del norte</td>
+      <td>Andrey Garcia</td>
+      <td>533187</td>
+      <td>14</td>
+      <td>Ceiba (Ceiba pentandra)</td>
+    </tr>
+    <tr>
+      <th>433</th>
+      <td>subregion del norte</td>
+      <td>Juan Pablo</td>
+      <td>407381</td>
+      <td>42</td>
+      <td>Guayac�n (Tabebuia spp.)</td>
+    </tr>
+    <tr>
+      <th>434</th>
+      <td>subregion del occidente</td>
+      <td>Juan Pablo</td>
+      <td>368425</td>
+      <td>48</td>
+      <td>Aliso (Alnus acuminata)</td>
+    </tr>
+    <tr>
+      <th>438</th>
+      <td>subregion de bajo cauca</td>
+      <td>Andres Sanchez</td>
+      <td>950809</td>
+      <td>46</td>
+      <td>Guayac�n (Tabebuia spp.)</td>
+    </tr>
+    <tr>
+      <th>441</th>
+      <td>subregion del nordeste</td>
+      <td>Juan Pablo</td>
+      <td>229876</td>
+      <td>35</td>
+      <td>Guayac�n (Tabebuia spp.)</td>
+    </tr>
+    <tr>
+      <th>443</th>
+      <td>subregion del occidente</td>
+      <td>Juan Pablo</td>
+      <td>102525</td>
+      <td>15</td>
+      <td>Chical� (Erythrina fusca)</td>
+    </tr>
+    <tr>
+      <th>445</th>
+      <td>subregion del nordeste</td>
+      <td>Miguel Paz</td>
+      <td>466262</td>
+      <td>40</td>
+      <td>Guadua (Guadua angustifolia, bamb�)</td>
+    </tr>
+    <tr>
+      <th>448</th>
+      <td>subregion del nordeste</td>
+      <td>Miguel Paz</td>
+      <td>674780</td>
+      <td>32</td>
+      <td>Guadua (Guadua angustifolia, bamb�)</td>
+    </tr>
+    <tr>
+      <th>449</th>
+      <td>subregion de oriente</td>
+      <td>Miguel Paz</td>
+      <td>597702</td>
+      <td>33</td>
+      <td>Nogal cafetero (Cordia alliodora)</td>
+    </tr>
+    <tr>
+      <th>450</th>
+      <td>subregio del valle de aburra</td>
+      <td>Andres Sanchez</td>
+      <td>739486</td>
+      <td>32</td>
+      <td>Ceroxylon (Ceroxylon spp., palma de cera)</td>
+    </tr>
+    <tr>
+      <th>455</th>
+      <td>subregio del valle de aburra</td>
+      <td>Andres Sanchez</td>
+      <td>939038</td>
+      <td>27</td>
+      <td>Guadua (Guadua angustifolia, bamb�)</td>
+    </tr>
+    <tr>
+      <th>456</th>
+      <td>subregion de oriente</td>
+      <td>Miguel Paz</td>
+      <td>447173</td>
+      <td>27</td>
+      <td>Guayac�n (Tabebuia spp.)</td>
+    </tr>
+    <tr>
+      <th>458</th>
+      <td>subregion de oriente</td>
+      <td>Valentina Mejia</td>
+      <td>736895</td>
+      <td>41</td>
+      <td>Chical� (Erythrina fusca)</td>
+    </tr>
+    <tr>
+      <th>459</th>
+      <td>subregio del valle de aburra</td>
+      <td>Andres Sanchez</td>
+      <td>529090</td>
+      <td>17</td>
+      <td>Guayac�n (Tabebuia spp.)</td>
+    </tr>
+    <tr>
+      <th>464</th>
+      <td>subregio del valle de aburra</td>
+      <td>Andres Sanchez</td>
+      <td>44961</td>
+      <td>45</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>473</th>
+      <td>subregion del nordeste</td>
+      <td>Andres Sanchez</td>
+      <td>190737</td>
+      <td>23</td>
+      <td>Aliso (Alnus acuminata)</td>
+    </tr>
+    <tr>
+      <th>474</th>
+      <td>subregion del occidente</td>
+      <td>Valentina Mejia</td>
+      <td>160873</td>
+      <td>20</td>
+      <td>Chical� (Erythrina fusca)</td>
+    </tr>
+    <tr>
+      <th>477</th>
+      <td>subregio del valle de aburra</td>
+      <td>Juan Pablo</td>
+      <td>748619</td>
+      <td>24</td>
+      <td>Chical� (Erythrina fusca)</td>
+    </tr>
+    <tr>
+      <th>478</th>
+      <td>subregion del norte</td>
+      <td>Miguel Paz</td>
+      <td>47325</td>
+      <td>20</td>
+      <td>Aliso (Alnus acuminata)</td>
+    </tr>
+    <tr>
+      <th>479</th>
+      <td>subregio del valle de aburra</td>
+      <td>Valentina Mejia</td>
+      <td>886709</td>
+      <td>13</td>
+      <td>Ceiba (Ceiba pentandra)</td>
+    </tr>
+    <tr>
+      <th>480</th>
+      <td>subregion del uraba</td>
+      <td>Andrey Garcia</td>
+      <td>909601</td>
+      <td>15</td>
+      <td>Ceroxylon (Ceroxylon spp., palma de cera)</td>
+    </tr>
+    <tr>
+      <th>483</th>
+      <td>subregion del norte</td>
+      <td>Andrey Garcia</td>
+      <td>46250</td>
+      <td>44</td>
+      <td>Palma de vino (Attalea butyracea)</td>
+    </tr>
+    <tr>
+      <th>484</th>
+      <td>subregio del valle de aburra</td>
+      <td>Valentina Mejia</td>
+      <td>595959</td>
+      <td>25</td>
+      <td>Nogal cafetero (Cordia alliodora)</td>
+    </tr>
+    <tr>
+      <th>486</th>
+      <td>subregion del occidente</td>
+      <td>Andres Sanchez</td>
+      <td>910740</td>
+      <td>46</td>
+      <td>Chical� (Erythrina fusca)</td>
+    </tr>
+    <tr>
+      <th>488</th>
+      <td>subregion de oriente</td>
+      <td>Juan Pablo</td>
+      <td>622364</td>
+      <td>27</td>
+      <td>Guayac�n (Tabebuia spp.)</td>
+    </tr>
+    <tr>
+      <th>490</th>
+      <td>subregion del uraba</td>
+      <td>Juan Pablo</td>
+      <td>491627</td>
+      <td>16</td>
+      <td>Guayac�n (Tabebuia spp.)</td>
+    </tr>
+    <tr>
+      <th>491</th>
+      <td>subregion de bajo cauca</td>
+      <td>Valentina Mejia</td>
+      <td>620469</td>
+      <td>29</td>
+      <td>Nogal cafetero (Cordia alliodora)</td>
+    </tr>
+    <tr>
+      <th>492</th>
+      <td>subregion del norte</td>
+      <td>Juan Pablo</td>
+      <td>231298</td>
+      <td>13</td>
+      <td>Guayac�n (Tabebuia spp.)</td>
+    </tr>
+    <tr>
+      <th>493</th>
+      <td>subregion de oriente</td>
+      <td>Miguel Paz</td>
+      <td>602910</td>
+      <td>43</td>
+      <td>Aliso (Alnus acuminata)</td>
+    </tr>
+    <tr>
+      <th>495</th>
+      <td>subregion de oriente</td>
+      <td>Juan Pablo</td>
+      <td>184650</td>
+      <td>31</td>
+      <td>Ceiba (Ceiba pentandra)</td>
+    </tr>
+    <tr>
+      <th>498</th>
+      <td>subregion de bajo cauca</td>
+      <td>Andres Sanchez</td>
+      <td>511283</td>
+      <td>42</td>
+      <td>Chical� (Erythrina fusca)</td>
+    </tr>
+    <tr>
+      <th>499</th>
+      <td>subregion de bajo cauca</td>
+      <td>Andrey Garcia</td>
+      <td>369421</td>
+      <td>22</td>
+      <td>Ceroxylon (Ceroxylon spp., palma de cera)</td>
+    </tr>
+  </tbody>
+</table>
+        </body>
+        </html>
+        

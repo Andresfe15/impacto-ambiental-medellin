@@ -1,0 +1,752 @@
+
+            <html>
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Bosque Urbano</title>
+                <style>
+                  table{
+                    margin-top: 30px;
+                    width: 100%;
+                    border-collapse: collapse;
+                    border-radius: 5px;
+                    overflow: hidden;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9); 
+                    background-color: #fff; 
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                  }
+
+                  table th, table td{
+                    padding: 2px;
+                    text-align: center;
+                  }
+
+                  table th{
+                    background-color: #2ecc71; 
+                    color: #fff; 
+                    transition: background-color 0.3s ease;
+                  }
+
+                  table tr:nth-child(even) {
+                    background-color: #ecf0f1; 
+                  }
+
+                  table:hover {
+                    transform: translateY(-3px); 
+                    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); 
+                  }
+                  
+                </style>
+            </head>
+            <body>
+        <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>comuna</th>
+      <th>Total Poblaci�n</th>
+      <th>Instituci�n</th>
+      <th>Fecha</th>
+      <th>Nombre</th>
+      <th>id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>7</th>
+      <td>Aranjuez (Comuna 4)</td>
+      <td>30000</td>
+      <td>Colegio Calasanz</td>
+      <td>2024-05-11</td>
+      <td>Carolina Mendez</td>
+      <td>135404</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>San Javier (Comuna 13)</td>
+      <td>30000</td>
+      <td>Colegio San ignacio</td>
+      <td>2024-05-10</td>
+      <td>Beatriz Mu�oz</td>
+      <td>320647</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Aranjuez (Comuna 4)</td>
+      <td>35000</td>
+      <td>Colegio San ignacio</td>
+      <td>2024-05-12</td>
+      <td>Sebastian Castro</td>
+      <td>307600</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>Aranjuez (Comuna 4)</td>
+      <td>35000</td>
+      <td>Palermo</td>
+      <td>2024-05-12</td>
+      <td>Andrea Castro</td>
+      <td>148971</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Manrique (Comuna 3)</td>
+      <td>30000</td>
+      <td>Salazar y Herrera</td>
+      <td>2024-05-12</td>
+      <td>Beatriz Mu�oz</td>
+      <td>913600</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Aranjuez (Comuna 4)</td>
+      <td>35000</td>
+      <td>Montessori</td>
+      <td>2024-05-13</td>
+      <td>Beatriz Mu�oz</td>
+      <td>179432</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>Bel�n (Comuna 16)</td>
+      <td>35000</td>
+      <td>Colegio San ignacio</td>
+      <td>2024-05-09</td>
+      <td>Marcos Villa</td>
+      <td>3646</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>Manrique (Comuna 3)</td>
+      <td>30000</td>
+      <td>Rafael Uribe Uribe</td>
+      <td>2024-05-10</td>
+      <td>Juan Carlos Perez</td>
+      <td>581207</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>Castilla (Comuna 5)</td>
+      <td>30000</td>
+      <td>cesde</td>
+      <td>2024-05-12</td>
+      <td>Marcos Villa</td>
+      <td>671374</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>Doce de Octubre (Comuna 6)</td>
+      <td>30000</td>
+      <td>Montessori</td>
+      <td>2024-05-10</td>
+      <td>Juan Carlos Perez</td>
+      <td>764476</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>Santa Cruz (Comuna 2)</td>
+      <td>30000</td>
+      <td>Colegio San ignacio</td>
+      <td>2024-05-13</td>
+      <td>Carolina Mendez</td>
+      <td>712657</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>Manrique (Comuna 3)</td>
+      <td>30000</td>
+      <td>cesde</td>
+      <td>2024-05-10</td>
+      <td>Beatriz Mu�oz</td>
+      <td>296105</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>La Am�rica (Comuna 12)</td>
+      <td>35000</td>
+      <td>Colegio la presentacion</td>
+      <td>2024-05-13</td>
+      <td>Andrea Castro</td>
+      <td>315757</td>
+    </tr>
+    <tr>
+      <th>86</th>
+      <td>Aranjuez (Comuna 4)</td>
+      <td>30000</td>
+      <td>INEM</td>
+      <td>2024-05-09</td>
+      <td>Carolina Mendez</td>
+      <td>942450</td>
+    </tr>
+    <tr>
+      <th>88</th>
+      <td>Bel�n (Comuna 16)</td>
+      <td>30000</td>
+      <td>Palermo</td>
+      <td>2024-05-13</td>
+      <td>Andrea Castro</td>
+      <td>932484</td>
+    </tr>
+    <tr>
+      <th>90</th>
+      <td>Castilla (Comuna 5)</td>
+      <td>35000</td>
+      <td>Montessori</td>
+      <td>2024-05-11</td>
+      <td>Andres Perez</td>
+      <td>725610</td>
+    </tr>
+    <tr>
+      <th>94</th>
+      <td>Guayabal (Comuna 15)</td>
+      <td>35000</td>
+      <td>INEM</td>
+      <td>2024-05-13</td>
+      <td>Carolina Mendez</td>
+      <td>535165</td>
+    </tr>
+    <tr>
+      <th>102</th>
+      <td>Guayabal (Comuna 15)</td>
+      <td>35000</td>
+      <td>Palermo</td>
+      <td>2024-05-10</td>
+      <td>Andrea Castro</td>
+      <td>932139</td>
+    </tr>
+    <tr>
+      <th>105</th>
+      <td>La Candelaria (Comuna 10)</td>
+      <td>30000</td>
+      <td>Colegio Calasanz</td>
+      <td>2024-05-11</td>
+      <td>Carolina Mendez</td>
+      <td>604963</td>
+    </tr>
+    <tr>
+      <th>106</th>
+      <td>El Poblado (Comuna 14)</td>
+      <td>35000</td>
+      <td>Corazonista</td>
+      <td>2024-05-12</td>
+      <td>Andres Perez</td>
+      <td>204400</td>
+    </tr>
+    <tr>
+      <th>108</th>
+      <td>Buenos Aires (Comuna 9)</td>
+      <td>35000</td>
+      <td>Jorge Robledo</td>
+      <td>2024-05-10</td>
+      <td>Andrea Castro</td>
+      <td>737226</td>
+    </tr>
+    <tr>
+      <th>110</th>
+      <td>Manrique (Comuna 3)</td>
+      <td>35000</td>
+      <td>Palermo</td>
+      <td>2024-05-09</td>
+      <td>Juan Carlos Perez</td>
+      <td>315854</td>
+    </tr>
+    <tr>
+      <th>114</th>
+      <td>Castilla (Comuna 5)</td>
+      <td>35000</td>
+      <td>Montessori</td>
+      <td>2024-05-13</td>
+      <td>Beatriz Mu�oz</td>
+      <td>584934</td>
+    </tr>
+    <tr>
+      <th>117</th>
+      <td>Bel�n (Comuna 16)</td>
+      <td>30000</td>
+      <td>Corazonista</td>
+      <td>2024-05-13</td>
+      <td>Juan Carlos Perez</td>
+      <td>755230</td>
+    </tr>
+    <tr>
+      <th>134</th>
+      <td>El Poblado (Comuna 14)</td>
+      <td>30000</td>
+      <td>Jorge Robledo</td>
+      <td>2024-05-12</td>
+      <td>Marcos Villa</td>
+      <td>748303</td>
+    </tr>
+    <tr>
+      <th>135</th>
+      <td>Bel�n (Comuna 16)</td>
+      <td>30000</td>
+      <td>INEM</td>
+      <td>2024-05-10</td>
+      <td>Carolina Mendez</td>
+      <td>416452</td>
+    </tr>
+    <tr>
+      <th>140</th>
+      <td>La Candelaria (Comuna 10)</td>
+      <td>30000</td>
+      <td>Palermo</td>
+      <td>2024-05-11</td>
+      <td>Andres Perez</td>
+      <td>494668</td>
+    </tr>
+    <tr>
+      <th>153</th>
+      <td>Buenos Aires (Comuna 9)</td>
+      <td>30000</td>
+      <td>INEM</td>
+      <td>2024-05-13</td>
+      <td>Andrea Castro</td>
+      <td>204145</td>
+    </tr>
+    <tr>
+      <th>168</th>
+      <td>Castilla (Comuna 5)</td>
+      <td>30000</td>
+      <td>Palermo</td>
+      <td>2024-05-11</td>
+      <td>Beatriz Mu�oz</td>
+      <td>638305</td>
+    </tr>
+    <tr>
+      <th>169</th>
+      <td>Santa Cruz (Comuna 2)</td>
+      <td>35000</td>
+      <td>Corazonista</td>
+      <td>2024-05-11</td>
+      <td>Andrea Castro</td>
+      <td>205846</td>
+    </tr>
+    <tr>
+      <th>186</th>
+      <td>La Candelaria (Comuna 10)</td>
+      <td>30000</td>
+      <td>cesde</td>
+      <td>2024-05-13</td>
+      <td>Andres Perez</td>
+      <td>934705</td>
+    </tr>
+    <tr>
+      <th>193</th>
+      <td>El Poblado (Comuna 14)</td>
+      <td>30000</td>
+      <td>cesde</td>
+      <td>2024-05-09</td>
+      <td>Sebastian Castro</td>
+      <td>407194</td>
+    </tr>
+    <tr>
+      <th>202</th>
+      <td>Villa Hermosa (Comuna 8)</td>
+      <td>35000</td>
+      <td>itm</td>
+      <td>2024-05-13</td>
+      <td>Sebastian Castro</td>
+      <td>404066</td>
+    </tr>
+    <tr>
+      <th>206</th>
+      <td>Popular (Comuna 1)</td>
+      <td>30000</td>
+      <td>INEM</td>
+      <td>2024-05-11</td>
+      <td>Andres Perez</td>
+      <td>652102</td>
+    </tr>
+    <tr>
+      <th>207</th>
+      <td>Doce de Octubre (Comuna 6)</td>
+      <td>35000</td>
+      <td>Palermo</td>
+      <td>2024-05-09</td>
+      <td>Carolina Mendez</td>
+      <td>827567</td>
+    </tr>
+    <tr>
+      <th>209</th>
+      <td>La Am�rica (Comuna 12)</td>
+      <td>30000</td>
+      <td>Corazonista</td>
+      <td>2024-05-11</td>
+      <td>Andres Perez</td>
+      <td>69621</td>
+    </tr>
+    <tr>
+      <th>212</th>
+      <td>San Javier (Comuna 13)</td>
+      <td>35000</td>
+      <td>Corazonista</td>
+      <td>2024-05-13</td>
+      <td>Sebastian Castro</td>
+      <td>554960</td>
+    </tr>
+    <tr>
+      <th>220</th>
+      <td>Manrique (Comuna 3)</td>
+      <td>35000</td>
+      <td>Colegio la presentacion</td>
+      <td>2024-05-10</td>
+      <td>Carolina Mendez</td>
+      <td>68700</td>
+    </tr>
+    <tr>
+      <th>223</th>
+      <td>San Javier (Comuna 13)</td>
+      <td>35000</td>
+      <td>INEM</td>
+      <td>2024-05-09</td>
+      <td>Carolina Mendez</td>
+      <td>101594</td>
+    </tr>
+    <tr>
+      <th>232</th>
+      <td>Santa Cruz (Comuna 2)</td>
+      <td>35000</td>
+      <td>Montessori</td>
+      <td>2024-05-10</td>
+      <td>Andres Perez</td>
+      <td>591472</td>
+    </tr>
+    <tr>
+      <th>237</th>
+      <td>Robledo (Comuna 7)</td>
+      <td>30000</td>
+      <td>Palermo</td>
+      <td>2024-05-13</td>
+      <td>Sebastian Castro</td>
+      <td>705279</td>
+    </tr>
+    <tr>
+      <th>250</th>
+      <td>La Am�rica (Comuna 12)</td>
+      <td>30000</td>
+      <td>Palermo</td>
+      <td>2024-05-13</td>
+      <td>Beatriz Mu�oz</td>
+      <td>444144</td>
+    </tr>
+    <tr>
+      <th>252</th>
+      <td>Laureles-Estadio (Comuna 11)</td>
+      <td>35000</td>
+      <td>Montessori</td>
+      <td>2024-05-12</td>
+      <td>Liliana Toro</td>
+      <td>224038</td>
+    </tr>
+    <tr>
+      <th>258</th>
+      <td>La Candelaria (Comuna 10)</td>
+      <td>30000</td>
+      <td>Rafael Uribe Uribe</td>
+      <td>2024-05-09</td>
+      <td>Liliana Toro</td>
+      <td>738058</td>
+    </tr>
+    <tr>
+      <th>262</th>
+      <td>Laureles-Estadio (Comuna 11)</td>
+      <td>35000</td>
+      <td>Montessori</td>
+      <td>2024-05-11</td>
+      <td>Sebastian Castro</td>
+      <td>890291</td>
+    </tr>
+    <tr>
+      <th>265</th>
+      <td>La Candelaria (Comuna 10)</td>
+      <td>35000</td>
+      <td>INEM</td>
+      <td>2024-05-13</td>
+      <td>Andrea Castro</td>
+      <td>828806</td>
+    </tr>
+    <tr>
+      <th>266</th>
+      <td>La Am�rica (Comuna 12)</td>
+      <td>30000</td>
+      <td>Colegio Calasanz</td>
+      <td>2024-05-10</td>
+      <td>Carolina Mendez</td>
+      <td>476480</td>
+    </tr>
+    <tr>
+      <th>270</th>
+      <td>Doce de Octubre (Comuna 6)</td>
+      <td>30000</td>
+      <td>Jorge Robledo</td>
+      <td>2024-05-11</td>
+      <td>Carolina Mendez</td>
+      <td>607741</td>
+    </tr>
+    <tr>
+      <th>273</th>
+      <td>Doce de Octubre (Comuna 6)</td>
+      <td>30000</td>
+      <td>INEM</td>
+      <td>2024-05-12</td>
+      <td>Juan Carlos Perez</td>
+      <td>313909</td>
+    </tr>
+    <tr>
+      <th>283</th>
+      <td>Robledo (Comuna 7)</td>
+      <td>30000</td>
+      <td>Palermo</td>
+      <td>2024-05-13</td>
+      <td>Carolina Mendez</td>
+      <td>698232</td>
+    </tr>
+    <tr>
+      <th>291</th>
+      <td>Doce de Octubre (Comuna 6)</td>
+      <td>35000</td>
+      <td>Corazonista</td>
+      <td>2024-05-09</td>
+      <td>Andres Perez</td>
+      <td>407258</td>
+    </tr>
+    <tr>
+      <th>294</th>
+      <td>La Am�rica (Comuna 12)</td>
+      <td>35000</td>
+      <td>Colegio Calasanz</td>
+      <td>2024-05-13</td>
+      <td>Juan Carlos Perez</td>
+      <td>458375</td>
+    </tr>
+    <tr>
+      <th>318</th>
+      <td>Bel�n (Comuna 16)</td>
+      <td>30000</td>
+      <td>INEM</td>
+      <td>2024-05-13</td>
+      <td>Marcos Villa</td>
+      <td>874776</td>
+    </tr>
+    <tr>
+      <th>319</th>
+      <td>El Poblado (Comuna 14)</td>
+      <td>35000</td>
+      <td>Montessori</td>
+      <td>2024-05-12</td>
+      <td>Sebastian Castro</td>
+      <td>135150</td>
+    </tr>
+    <tr>
+      <th>325</th>
+      <td>San Javier (Comuna 13)</td>
+      <td>30000</td>
+      <td>Colegio Calasanz</td>
+      <td>2024-05-10</td>
+      <td>Liliana Toro</td>
+      <td>13109</td>
+    </tr>
+    <tr>
+      <th>326</th>
+      <td>Buenos Aires (Comuna 9)</td>
+      <td>30000</td>
+      <td>Rafael Uribe Uribe</td>
+      <td>2024-05-13</td>
+      <td>Beatriz Mu�oz</td>
+      <td>252286</td>
+    </tr>
+    <tr>
+      <th>327</th>
+      <td>Doce de Octubre (Comuna 6)</td>
+      <td>35000</td>
+      <td>Montessori</td>
+      <td>2024-05-11</td>
+      <td>Carolina Mendez</td>
+      <td>206433</td>
+    </tr>
+    <tr>
+      <th>356</th>
+      <td>Aranjuez (Comuna 4)</td>
+      <td>30000</td>
+      <td>Rafael Uribe Uribe</td>
+      <td>2024-05-13</td>
+      <td>Juan Carlos Perez</td>
+      <td>63931</td>
+    </tr>
+    <tr>
+      <th>361</th>
+      <td>San Javier (Comuna 13)</td>
+      <td>35000</td>
+      <td>Corazonista</td>
+      <td>2024-05-13</td>
+      <td>Carolina Mendez</td>
+      <td>558877</td>
+    </tr>
+    <tr>
+      <th>377</th>
+      <td>Laureles-Estadio (Comuna 11)</td>
+      <td>35000</td>
+      <td>Salazar y Herrera</td>
+      <td>2024-05-10</td>
+      <td>Juan Carlos Perez</td>
+      <td>950974</td>
+    </tr>
+    <tr>
+      <th>388</th>
+      <td>Aranjuez (Comuna 4)</td>
+      <td>30000</td>
+      <td>Montessori</td>
+      <td>2024-05-13</td>
+      <td>Juan Carlos Perez</td>
+      <td>984929</td>
+    </tr>
+    <tr>
+      <th>390</th>
+      <td>Manrique (Comuna 3)</td>
+      <td>35000</td>
+      <td>Palermo</td>
+      <td>2024-05-09</td>
+      <td>Andres Perez</td>
+      <td>124421</td>
+    </tr>
+    <tr>
+      <th>405</th>
+      <td>Guayabal (Comuna 15)</td>
+      <td>35000</td>
+      <td>Salazar y Herrera</td>
+      <td>2024-05-12</td>
+      <td>Marcos Villa</td>
+      <td>616062</td>
+    </tr>
+    <tr>
+      <th>421</th>
+      <td>Buenos Aires (Comuna 9)</td>
+      <td>35000</td>
+      <td>Montessori</td>
+      <td>2024-05-10</td>
+      <td>Beatriz Mu�oz</td>
+      <td>695271</td>
+    </tr>
+    <tr>
+      <th>429</th>
+      <td>Robledo (Comuna 7)</td>
+      <td>30000</td>
+      <td>Palermo</td>
+      <td>2024-05-12</td>
+      <td>Beatriz Mu�oz</td>
+      <td>286123</td>
+    </tr>
+    <tr>
+      <th>431</th>
+      <td>Castilla (Comuna 5)</td>
+      <td>30000</td>
+      <td>Colegio la presentacion</td>
+      <td>2024-05-13</td>
+      <td>Andrea Castro</td>
+      <td>582122</td>
+    </tr>
+    <tr>
+      <th>435</th>
+      <td>Doce de Octubre (Comuna 6)</td>
+      <td>35000</td>
+      <td>INEM</td>
+      <td>2024-05-10</td>
+      <td>Andres Perez</td>
+      <td>546654</td>
+    </tr>
+    <tr>
+      <th>436</th>
+      <td>San Javier (Comuna 13)</td>
+      <td>35000</td>
+      <td>INEM</td>
+      <td>2024-05-09</td>
+      <td>Andrea Castro</td>
+      <td>946377</td>
+    </tr>
+    <tr>
+      <th>440</th>
+      <td>Bel�n (Comuna 16)</td>
+      <td>30000</td>
+      <td>Montessori</td>
+      <td>2024-05-12</td>
+      <td>Carolina Mendez</td>
+      <td>513504</td>
+    </tr>
+    <tr>
+      <th>443</th>
+      <td>El Poblado (Comuna 14)</td>
+      <td>35000</td>
+      <td>Jorge Robledo</td>
+      <td>2024-05-12</td>
+      <td>Sebastian Castro</td>
+      <td>589929</td>
+    </tr>
+    <tr>
+      <th>444</th>
+      <td>La Candelaria (Comuna 10)</td>
+      <td>30000</td>
+      <td>Corazonista</td>
+      <td>2024-05-10</td>
+      <td>Juan Carlos Perez</td>
+      <td>403117</td>
+    </tr>
+    <tr>
+      <th>449</th>
+      <td>Popular (Comuna 1)</td>
+      <td>30000</td>
+      <td>cesde</td>
+      <td>2024-05-10</td>
+      <td>Andres Perez</td>
+      <td>967117</td>
+    </tr>
+    <tr>
+      <th>472</th>
+      <td>El Poblado (Comuna 14)</td>
+      <td>30000</td>
+      <td>Colegio la presentacion</td>
+      <td>2024-05-11</td>
+      <td>Sebastian Castro</td>
+      <td>475379</td>
+    </tr>
+    <tr>
+      <th>473</th>
+      <td>La Candelaria (Comuna 10)</td>
+      <td>35000</td>
+      <td>Corazonista</td>
+      <td>2024-05-11</td>
+      <td>Andres Perez</td>
+      <td>49723</td>
+    </tr>
+    <tr>
+      <th>492</th>
+      <td>Bel�n (Comuna 16)</td>
+      <td>30000</td>
+      <td>INEM</td>
+      <td>2024-05-13</td>
+      <td>Carolina Mendez</td>
+      <td>810141</td>
+    </tr>
+    <tr>
+      <th>494</th>
+      <td>El Poblado (Comuna 14)</td>
+      <td>35000</td>
+      <td>INEM</td>
+      <td>2024-05-12</td>
+      <td>Marcos Villa</td>
+      <td>252132</td>
+    </tr>
+    <tr>
+      <th>495</th>
+      <td>El Poblado (Comuna 14)</td>
+      <td>30000</td>
+      <td>itm</td>
+      <td>2024-05-12</td>
+      <td>Andrea Castro</td>
+      <td>32230</td>
+    </tr>
+  </tbody>
+</table>
+        </body>
+        </html>
+        

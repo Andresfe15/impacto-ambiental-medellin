@@ -1,0 +1,578 @@
+
+            <html>
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Bosque Urbano</title>
+                <style>
+                  table{
+                    margin-top: 30px;
+                    width: 100%;
+                    border-collapse: collapse;
+                    border-radius: 5px;
+                    overflow: hidden;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9); 
+                    background-color: #fff; 
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                  }
+
+                  table th, table td{
+                    padding: 2px;
+                    text-align: center;
+                  }
+
+                  table th{
+                    background-color: #2ecc71; 
+                    color: #fff; 
+                    transition: background-color 0.3s ease;
+                  }
+
+                  table tr:nth-child(even) {
+                    background-color: #ecf0f1; 
+                  }
+
+                  table:hover {
+                    transform: translateY(-3px); 
+                    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); 
+                  }
+                  
+                </style>
+            </head>
+            <body>
+        <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>comuna</th>
+      <th>Cantidad Kg</th>
+      <th>Manejo residuos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>San Javier (Comuna 13)</td>
+      <td>35000</td>
+      <td>papel</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Laureles-Estadio (Comuna 11)</td>
+      <td>35000</td>
+      <td>papel</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Doce de Octubre (Comuna 6)</td>
+      <td>48000</td>
+      <td>papel</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Santa Cruz (Comuna 2)</td>
+      <td>35000</td>
+      <td>plastico</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>La Candelaria (Comuna 10)</td>
+      <td>35000</td>
+      <td>metal</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Robledo (Comuna 7)</td>
+      <td>48000</td>
+      <td>metal</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>Robledo (Comuna 7)</td>
+      <td>48000</td>
+      <td>metal</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>San Javier (Comuna 13)</td>
+      <td>35000</td>
+      <td>plastico</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>Robledo (Comuna 7)</td>
+      <td>35000</td>
+      <td>plastico</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>La Am�rica (Comuna 12)</td>
+      <td>48000</td>
+      <td>metal</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>La Am�rica (Comuna 12)</td>
+      <td>35000</td>
+      <td>metal</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>Manrique (Comuna 3)</td>
+      <td>48000</td>
+      <td>papel</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>El Poblado (Comuna 14)</td>
+      <td>48000</td>
+      <td>plastico</td>
+    </tr>
+    <tr>
+      <th>68</th>
+      <td>Buenos Aires (Comuna 9)</td>
+      <td>48000</td>
+      <td>vidrio</td>
+    </tr>
+    <tr>
+      <th>74</th>
+      <td>La Am�rica (Comuna 12)</td>
+      <td>35000</td>
+      <td>vidrio</td>
+    </tr>
+    <tr>
+      <th>88</th>
+      <td>Doce de Octubre (Comuna 6)</td>
+      <td>35000</td>
+      <td>plastico</td>
+    </tr>
+    <tr>
+      <th>111</th>
+      <td>La Am�rica (Comuna 12)</td>
+      <td>48000</td>
+      <td>metal</td>
+    </tr>
+    <tr>
+      <th>115</th>
+      <td>Bel�n (Comuna 16)</td>
+      <td>48000</td>
+      <td>plastico</td>
+    </tr>
+    <tr>
+      <th>118</th>
+      <td>Manrique (Comuna 3)</td>
+      <td>35000</td>
+      <td>metal</td>
+    </tr>
+    <tr>
+      <th>124</th>
+      <td>Aranjuez (Comuna 4)</td>
+      <td>35000</td>
+      <td>carton</td>
+    </tr>
+    <tr>
+      <th>128</th>
+      <td>Robledo (Comuna 7)</td>
+      <td>35000</td>
+      <td>carton</td>
+    </tr>
+    <tr>
+      <th>131</th>
+      <td>Aranjuez (Comuna 4)</td>
+      <td>48000</td>
+      <td>plastico</td>
+    </tr>
+    <tr>
+      <th>133</th>
+      <td>Laureles-Estadio (Comuna 11)</td>
+      <td>35000</td>
+      <td>carton</td>
+    </tr>
+    <tr>
+      <th>138</th>
+      <td>Castilla (Comuna 5)</td>
+      <td>48000</td>
+      <td>carton</td>
+    </tr>
+    <tr>
+      <th>139</th>
+      <td>Santa Cruz (Comuna 2)</td>
+      <td>35000</td>
+      <td>vidrio</td>
+    </tr>
+    <tr>
+      <th>140</th>
+      <td>Guayabal (Comuna 15)</td>
+      <td>35000</td>
+      <td>metal</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>La Candelaria (Comuna 10)</td>
+      <td>35000</td>
+      <td>carton</td>
+    </tr>
+    <tr>
+      <th>165</th>
+      <td>Popular (Comuna 1)</td>
+      <td>35000</td>
+      <td>metal</td>
+    </tr>
+    <tr>
+      <th>170</th>
+      <td>Villa Hermosa (Comuna 8)</td>
+      <td>48000</td>
+      <td>plastico</td>
+    </tr>
+    <tr>
+      <th>172</th>
+      <td>El Poblado (Comuna 14)</td>
+      <td>48000</td>
+      <td>vidrio</td>
+    </tr>
+    <tr>
+      <th>181</th>
+      <td>Laureles-Estadio (Comuna 11)</td>
+      <td>35000</td>
+      <td>carton</td>
+    </tr>
+    <tr>
+      <th>190</th>
+      <td>Villa Hermosa (Comuna 8)</td>
+      <td>35000</td>
+      <td>carton</td>
+    </tr>
+    <tr>
+      <th>192</th>
+      <td>La Candelaria (Comuna 10)</td>
+      <td>35000</td>
+      <td>carton</td>
+    </tr>
+    <tr>
+      <th>207</th>
+      <td>El Poblado (Comuna 14)</td>
+      <td>48000</td>
+      <td>carton</td>
+    </tr>
+    <tr>
+      <th>213</th>
+      <td>Robledo (Comuna 7)</td>
+      <td>35000</td>
+      <td>carton</td>
+    </tr>
+    <tr>
+      <th>215</th>
+      <td>Buenos Aires (Comuna 9)</td>
+      <td>35000</td>
+      <td>metal</td>
+    </tr>
+    <tr>
+      <th>217</th>
+      <td>El Poblado (Comuna 14)</td>
+      <td>35000</td>
+      <td>metal</td>
+    </tr>
+    <tr>
+      <th>221</th>
+      <td>Robledo (Comuna 7)</td>
+      <td>35000</td>
+      <td>vidrio</td>
+    </tr>
+    <tr>
+      <th>223</th>
+      <td>Manrique (Comuna 3)</td>
+      <td>48000</td>
+      <td>carton</td>
+    </tr>
+    <tr>
+      <th>242</th>
+      <td>Guayabal (Comuna 15)</td>
+      <td>48000</td>
+      <td>carton</td>
+    </tr>
+    <tr>
+      <th>263</th>
+      <td>Popular (Comuna 1)</td>
+      <td>35000</td>
+      <td>papel</td>
+    </tr>
+    <tr>
+      <th>271</th>
+      <td>Robledo (Comuna 7)</td>
+      <td>48000</td>
+      <td>metal</td>
+    </tr>
+    <tr>
+      <th>272</th>
+      <td>Laureles-Estadio (Comuna 11)</td>
+      <td>35000</td>
+      <td>carton</td>
+    </tr>
+    <tr>
+      <th>273</th>
+      <td>Santa Cruz (Comuna 2)</td>
+      <td>48000</td>
+      <td>carton</td>
+    </tr>
+    <tr>
+      <th>274</th>
+      <td>La Candelaria (Comuna 10)</td>
+      <td>35000</td>
+      <td>vidrio</td>
+    </tr>
+    <tr>
+      <th>275</th>
+      <td>Popular (Comuna 1)</td>
+      <td>35000</td>
+      <td>plastico</td>
+    </tr>
+    <tr>
+      <th>282</th>
+      <td>La Am�rica (Comuna 12)</td>
+      <td>48000</td>
+      <td>vidrio</td>
+    </tr>
+    <tr>
+      <th>288</th>
+      <td>La Candelaria (Comuna 10)</td>
+      <td>48000</td>
+      <td>carton</td>
+    </tr>
+    <tr>
+      <th>289</th>
+      <td>Robledo (Comuna 7)</td>
+      <td>48000</td>
+      <td>carton</td>
+    </tr>
+    <tr>
+      <th>291</th>
+      <td>Popular (Comuna 1)</td>
+      <td>35000</td>
+      <td>metal</td>
+    </tr>
+    <tr>
+      <th>292</th>
+      <td>Popular (Comuna 1)</td>
+      <td>35000</td>
+      <td>papel</td>
+    </tr>
+    <tr>
+      <th>297</th>
+      <td>Bel�n (Comuna 16)</td>
+      <td>35000</td>
+      <td>plastico</td>
+    </tr>
+    <tr>
+      <th>299</th>
+      <td>Robledo (Comuna 7)</td>
+      <td>48000</td>
+      <td>carton</td>
+    </tr>
+    <tr>
+      <th>315</th>
+      <td>El Poblado (Comuna 14)</td>
+      <td>48000</td>
+      <td>vidrio</td>
+    </tr>
+    <tr>
+      <th>316</th>
+      <td>La Am�rica (Comuna 12)</td>
+      <td>35000</td>
+      <td>plastico</td>
+    </tr>
+    <tr>
+      <th>318</th>
+      <td>Guayabal (Comuna 15)</td>
+      <td>35000</td>
+      <td>vidrio</td>
+    </tr>
+    <tr>
+      <th>319</th>
+      <td>Guayabal (Comuna 15)</td>
+      <td>35000</td>
+      <td>metal</td>
+    </tr>
+    <tr>
+      <th>323</th>
+      <td>Buenos Aires (Comuna 9)</td>
+      <td>48000</td>
+      <td>carton</td>
+    </tr>
+    <tr>
+      <th>325</th>
+      <td>Santa Cruz (Comuna 2)</td>
+      <td>35000</td>
+      <td>carton</td>
+    </tr>
+    <tr>
+      <th>326</th>
+      <td>El Poblado (Comuna 14)</td>
+      <td>35000</td>
+      <td>plastico</td>
+    </tr>
+    <tr>
+      <th>335</th>
+      <td>Aranjuez (Comuna 4)</td>
+      <td>48000</td>
+      <td>papel</td>
+    </tr>
+    <tr>
+      <th>340</th>
+      <td>Robledo (Comuna 7)</td>
+      <td>35000</td>
+      <td>plastico</td>
+    </tr>
+    <tr>
+      <th>342</th>
+      <td>Manrique (Comuna 3)</td>
+      <td>48000</td>
+      <td>plastico</td>
+    </tr>
+    <tr>
+      <th>354</th>
+      <td>Laureles-Estadio (Comuna 11)</td>
+      <td>35000</td>
+      <td>carton</td>
+    </tr>
+    <tr>
+      <th>359</th>
+      <td>Buenos Aires (Comuna 9)</td>
+      <td>35000</td>
+      <td>papel</td>
+    </tr>
+    <tr>
+      <th>360</th>
+      <td>Aranjuez (Comuna 4)</td>
+      <td>48000</td>
+      <td>metal</td>
+    </tr>
+    <tr>
+      <th>367</th>
+      <td>La Am�rica (Comuna 12)</td>
+      <td>35000</td>
+      <td>carton</td>
+    </tr>
+    <tr>
+      <th>371</th>
+      <td>Guayabal (Comuna 15)</td>
+      <td>35000</td>
+      <td>vidrio</td>
+    </tr>
+    <tr>
+      <th>376</th>
+      <td>Aranjuez (Comuna 4)</td>
+      <td>35000</td>
+      <td>papel</td>
+    </tr>
+    <tr>
+      <th>378</th>
+      <td>La Candelaria (Comuna 10)</td>
+      <td>35000</td>
+      <td>papel</td>
+    </tr>
+    <tr>
+      <th>392</th>
+      <td>El Poblado (Comuna 14)</td>
+      <td>35000</td>
+      <td>plastico</td>
+    </tr>
+    <tr>
+      <th>397</th>
+      <td>La Am�rica (Comuna 12)</td>
+      <td>35000</td>
+      <td>carton</td>
+    </tr>
+    <tr>
+      <th>401</th>
+      <td>El Poblado (Comuna 14)</td>
+      <td>48000</td>
+      <td>carton</td>
+    </tr>
+    <tr>
+      <th>407</th>
+      <td>Castilla (Comuna 5)</td>
+      <td>35000</td>
+      <td>carton</td>
+    </tr>
+    <tr>
+      <th>423</th>
+      <td>Laureles-Estadio (Comuna 11)</td>
+      <td>48000</td>
+      <td>vidrio</td>
+    </tr>
+    <tr>
+      <th>427</th>
+      <td>Manrique (Comuna 3)</td>
+      <td>48000</td>
+      <td>papel</td>
+    </tr>
+    <tr>
+      <th>439</th>
+      <td>La Am�rica (Comuna 12)</td>
+      <td>35000</td>
+      <td>vidrio</td>
+    </tr>
+    <tr>
+      <th>448</th>
+      <td>Manrique (Comuna 3)</td>
+      <td>48000</td>
+      <td>metal</td>
+    </tr>
+    <tr>
+      <th>454</th>
+      <td>Aranjuez (Comuna 4)</td>
+      <td>48000</td>
+      <td>vidrio</td>
+    </tr>
+    <tr>
+      <th>455</th>
+      <td>Castilla (Comuna 5)</td>
+      <td>48000</td>
+      <td>plastico</td>
+    </tr>
+    <tr>
+      <th>462</th>
+      <td>Santa Cruz (Comuna 2)</td>
+      <td>35000</td>
+      <td>carton</td>
+    </tr>
+    <tr>
+      <th>466</th>
+      <td>Robledo (Comuna 7)</td>
+      <td>35000</td>
+      <td>metal</td>
+    </tr>
+    <tr>
+      <th>472</th>
+      <td>Doce de Octubre (Comuna 6)</td>
+      <td>35000</td>
+      <td>plastico</td>
+    </tr>
+    <tr>
+      <th>474</th>
+      <td>Doce de Octubre (Comuna 6)</td>
+      <td>35000</td>
+      <td>plastico</td>
+    </tr>
+    <tr>
+      <th>479</th>
+      <td>Guayabal (Comuna 15)</td>
+      <td>35000</td>
+      <td>papel</td>
+    </tr>
+    <tr>
+      <th>487</th>
+      <td>Doce de Octubre (Comuna 6)</td>
+      <td>48000</td>
+      <td>carton</td>
+    </tr>
+    <tr>
+      <th>497</th>
+      <td>La Am�rica (Comuna 12)</td>
+      <td>48000</td>
+      <td>metal</td>
+    </tr>
+  </tbody>
+</table>
+        </body>
+        </html>
+        
