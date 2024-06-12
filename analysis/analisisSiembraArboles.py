@@ -1,4 +1,6 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+
 from data.generators.generadorSiembraArboles import generarDatosSiembraArboles
 from helpers.generarTabla import crearTablaHTML
 
@@ -51,6 +53,20 @@ def construirDataFrameSiembraArboles():
 
     crearTablaHTML(sumas_df, "sumas_siembra_arboles")
     crearTablaHTML(promedios_df, "promedios_siembra_arboles")   
+
+     #Agrupando datos
+    datosAgrupados=siembraArbolesDF.groupby("Corregimiento")["Hectareas sembradas"].mean()
+    
+    #Graficando datos
+    plt.figure(figsize=(20,20))
+    datosAgrupados.plot(kind='bar',color='green')
+    plt.title('Cantidad de hectareas sembradas')
+    plt.xlabel('Corregimiento')
+    plt.ylabel('Hectareas sembradas (Por especie)')
+    plt.grid(True)
+    plt.xticks(rotation=45)
+    plt.savefig('./assets/img/SiembraArboles.png',format='png',dpi=300)
+    #plt.show()
 
 
 construirDataFrameSiembraArboles()

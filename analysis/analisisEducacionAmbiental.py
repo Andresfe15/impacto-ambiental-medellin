@@ -1,4 +1,6 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+
 from data.generators.generadorEducacionAmbiental import generarDatosEducacionAmbiental
 from helpers.generarTabla import crearTablaHTML
 import re
@@ -57,7 +59,21 @@ def construirDataFrameEducacionAmbiental():
     print(filtroEducacionRango3)
 
     crearTablaHTML(sumas_df, "sumas_educacion")
-    crearTablaHTML(promedios_df, "promedios_educacion")   
+    crearTablaHTML(promedios_df, "promedios_educacion")  
+
+     #Agrupando datos
+    datosAgrupados=educacionAmbientalDF.groupby("comuna")["Total Población"].mean()
+    
+    #Graficando datos
+    plt.figure(figsize=(20,20))
+    datosAgrupados.plot(kind='bar',color='green')
+    plt.title('Calidad de Educacion por comuna en Medellin')
+    plt.xlabel('Comuna')
+    plt.ylabel('Total Población (Indice Total Población)')
+    plt.grid(True)
+    plt.xticks(rotation=45)
+    plt.savefig('./assets/img/educaionAmbiental.png',format='png',dpi=300)
+    #plt.show()
 
 construirDataFrameEducacionAmbiental()
 

@@ -1,4 +1,6 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+
 from data.generators.generadorReciclaje import generarDatosReciclaje
 from helpers.generarTabla import crearTablaHTML
 import re
@@ -58,6 +60,20 @@ def construirDataFrameReciclaje():
 
     crearTablaHTML(sumas_df, "sumas_reciclaje")
     crearTablaHTML(promedios_df, "promedios_reciclaje")   
+
+     #Agrupando datos
+    datosAgrupados=reciclajeDF.groupby("comuna")["Cantidad Kg"].mean()
+    
+    #Graficando datos
+    plt.figure(figsize=(20,20))
+    datosAgrupados.plot(kind='bar',color='green')
+    plt.title('Cantidad total de Reciclaje')
+    plt.xlabel('Comuna')
+    plt.ylabel('Cantidad Kg (Por material)')
+    plt.grid(True)
+    plt.xticks(rotation=45)
+    plt.savefig('./assets/img/Reciclaje.png',format='png',dpi=300)
+    #plt.show()
 
 
 construirDataFrameReciclaje()

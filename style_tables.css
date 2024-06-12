@@ -26,6 +26,7 @@ body {
     transform: translateY(-5px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
+
 .borde{
     background-color: rgba(255, 255, 255, 0.5);
     border: 2px solid black; 
@@ -48,4 +49,17 @@ p, h4, h2{
 }
 .ml-2 {
     margin-left: 10px;
+}
+
+.img-grafico {
+    display: grid;
+    place-items: center;
+    height: 100vh; /* Altura del contenedor igual a la altura de la ventana del navegador */
+}
+
+.img-grafico img {
+    max-width: 100%; /* Asegura que la imagen no se desborde */
+    height: auto;    /* Mantiene la proporción de la imagen */
+    border: 2px solid black; 
+    border-radius: 10px;
 }

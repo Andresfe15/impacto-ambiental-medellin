@@ -1,4 +1,6 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+
 from data.generators.generadorRuido import generarRuido
 from helpers.generarTabla import crearTablaHTML
 import re
@@ -76,6 +78,20 @@ def construirDataFrameCalidadRuido():
     # Crear tabla HTML para las sumas y promedios
     crearTablaHTML(sumas_ruido, "sumas_ruido")
     crearTablaHTML(promedios_ruido, "promedios_ruido")
+
+    #Agrupando datos
+    datosAgrupados=calidadRuidoDf.groupby("comuna")["Desibeles noche"].mean()
+    
+    #Graficando datos
+    plt.figure(figsize=(20,20))
+    datosAgrupados.plot(kind='bar',color='green')
+    plt.title('Calidad de Ruido por comuna en Medellin')
+    plt.xlabel('Comuna')
+    plt.ylabel('Desibeles noche (Indice Calidad de Ruido)')
+    plt.grid(True)
+    plt.xticks(rotation=45)
+    plt.savefig('./assets/img/calidadRuido.png',format='png',dpi=300)
+    #plt.show()
 
 construirDataFrameCalidadRuido()
 
